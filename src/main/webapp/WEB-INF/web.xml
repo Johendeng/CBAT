@@ -84,6 +84,6 @@
      struts.xml： <constant name="struts.i18n.encoding" value="UTF-8">
    -->
   <welcome-file-list>
-    <welcome-file>source/index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
 </web-app>
