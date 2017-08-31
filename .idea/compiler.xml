@@ -22,11 +22,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="CBAT" />
+        <module name="costomerBehaviorAnalysisTool" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="CBAT" target="1.8" />
+      <module name="costomerBehaviorAnalysisTool" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -131,6 +131,12 @@
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
       <version>1.7.21</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.slf4j</groupId>
+          <artifactId>log4j-over-slf4j</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <!-- 日志包 END-->
 
@@ -170,21 +176,10 @@
       <version>${mysql.version}</version>
     </dependency>
     <!--MYSQL  END -->
-    <!-- storm and kafka and zookeeper start-->
-    <dependency>
-      <groupId>org.apache.storm</groupId>
-      <artifactId>storm-core</artifactId>
-      <version>0.9.3</version>
-    </dependency>
     <dependency>
       <groupId>org.apache.kafka</groupId>
       <artifactId>kafka_2.10</artifactId>
       <version>0.10.0.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.storm</groupId>
-      <artifactId>storm-kafka</artifactId>
-      <version>0.9.3</version>
     </dependency>
     <dependency>
       <groupId>org.apache.zookeeper</groupId>
@@ -193,7 +188,20 @@
       <type>pom</type>
     </dependency>
     <!-- storm and kafka and zookeeper end  -->
-
+    <!-- redis 数据库驱动  start-->
+    <!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
+    <dependency>
+      <groupId>redis.clients</groupId>
+      <artifactId>jedis</artifactId>
+      <version>2.1.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-redis -->
+    <dependency>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-redis</artifactId>
+      <version>1.0.2.RELEASE</version>
+    </dependency>
+    <!-- redis 数据库驱动  end  -->
 
 
 
@@ -201,5 +209,17 @@
   </dependencies>
   <build>
     <finalName>costomerBehaviorAnalysisTool</finalName>
+    <!--<defaultGoal>compile</defaultGoal>-->
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.6.0</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>
